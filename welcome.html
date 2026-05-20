@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+<div class="auth-box">
+
+  <h1>Բարի գալուստ 🌿</h1>
+
+  <p>Դուք հաջողությամբ մուտք եք գործել համակարգ</p>
+
+  <button onclick="logout()">Ելք</button>
+
+</div>
+
+<script>
+  function logout(){
+    localStorage.removeItem('loggedIn');
+    window.location.href = 'login.html';
+  }
+
+  // extra security check
+  if(localStorage.getItem('loggedIn') !== 'true'){
+    window.location.href = 'login.html';
+  }
+</script>
+
+</body>
+</html>
